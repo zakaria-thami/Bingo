@@ -119,7 +119,7 @@ if __name__ == "__main__":
     bingo1.reading_input(path)
 
     #testing input reading/loading 
-    #printing the 4th table and the drawnset
+    #printing the 1st table and the drawnset
     print(f'the drawn set : {bingo1.drawnSet}')
     print(f'board number 1 : {bingo1.boards[0].content}')
 
