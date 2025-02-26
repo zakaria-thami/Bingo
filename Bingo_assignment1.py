@@ -4,7 +4,7 @@
 
 #### observer / subscriber approach
 class Board:
-    def __init__(self,content:list):
+    def __init__(self,content=[]):
         self.content=content
         self.marked=[False] * len(content)
         self.score=0
