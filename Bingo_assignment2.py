@@ -12,9 +12,10 @@ class Board:
         self.hasWon=False
 
     def mark(self,drawnValue):
-        #if value exxist in board mark it as true 
-        
+        #if value exist in board mark it as true 
         if drawnValue in self.content:
+            #run a check on the currently marked values of the board
+            #which updates the hasWon attribute
             self.marked[self.content.index(drawnValue)]=True
             self.checkMarked()
         return self.hasWon
@@ -22,7 +23,7 @@ class Board:
     def checkMarked(self):
         boardLen=25
         size=5
-        #check rows
+        #check if there's a match on the rows level
         i=0
         while (i<boardLen):
             if not(False in self.marked[i:i+size]):
@@ -30,7 +31,7 @@ class Board:
                 print('BINGOOOOOO!!')
                 return
             i+=size
-        #check columns
+        #check if there's a match on the columns level
         i=0
         while(i<size):
 
@@ -42,6 +43,7 @@ class Board:
 
     def getUnmarkedSum(self):
         sum=0
+        #calculate the sum of unmarked values from the board
         for val, flag in zip(self.content,self.marked):
             if not flag :
                 sum=sum+val
@@ -129,7 +131,7 @@ if __name__ == "__main__":
     bingo1.readingInput(path)
 
     #testing input reading/loading 
-    #printing the 4th table and the drawnset
+    #printing the 1st table and the drawnset
     print(f'the drawn set : {bingo1.drawnSet}')
     print(f'board number 1 : {bingo1.boards[0].content}')
 
